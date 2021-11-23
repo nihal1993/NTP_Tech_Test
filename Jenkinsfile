@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('scan') {
       steps {
-        sh "sudo docker run -v ${WORKSPACE}:/home/ubuntu/ravi --workdir /home/ubuntu/ravi returntocorp/semgrep-agent:v1 semgrep-agent --config p/ci "
+        sh "docker run -v ${WORKSPACE}:/src --workdir /src returntocorp/semgrep-agent:v1 semgrep-agent --config p/ci "
       }
     }
   }
